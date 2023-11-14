@@ -1,6 +1,8 @@
 package geiffel.da4.issuetracker.user;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,14 +11,16 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
+@CrossOrigin(origins = "*")
 public class UserController {
 
-    private UserService userService;
+    private final UserService userService;
 
     @Autowired
     public UserController(UserService userService) {
         this.userService=userService;
     }
+
 
     @GetMapping("")
     public List<User> getAll() {
@@ -29,7 +33,7 @@ public class UserController {
     }
 
     @PostMapping("")
-    public ResponseEntity createUser(@RequestBody User user) {
+    public ResponseEntity createUser(@Valid @RequestBody User user) {
         User created_user = userService.create(user);
         return ResponseEntity.created(URI.create("/users/"+created_user.getId().toString())).build();
     }
