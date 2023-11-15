@@ -16,7 +16,7 @@ public class CommentaireController {
     private CommentaireService commentaireService;
 
     @Autowired
-    public CommentaireController(@Qualifier("jpa") CommentaireService commentaireService) {
+    public CommentaireController(CommentaireService commentaireService) {
         this.commentaireService = commentaireService;
     }
 

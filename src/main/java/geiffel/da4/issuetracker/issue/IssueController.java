@@ -15,7 +15,7 @@ public class IssueController  {
     private IssueService issueService;
 
     @Autowired
-    public IssueController(@Qualifier("jpa") IssueService issueService) {
+    public IssueController(IssueService issueService) {
         this.issueService = issueService;
     }
 
