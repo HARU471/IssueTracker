@@ -76,15 +76,15 @@ public abstract class LocalService<T1, T2> {
             List<T1> objects = this.getAll();
 
             // if the list is empty, will throw an exception, which is okay
-            Class<?> class_ = objects.get(0).getClass();
-            PropertyDescriptor propertyDescriptor = new PropertyDescriptor(getIdentifier(), class_);
+            Class<?> classT = objects.get(0).getClass();
+            PropertyDescriptor propertyDescriptor = new PropertyDescriptor(getIdentifier(), classT);
             while (!found && i < objects.size()) {
                 found = propertyDescriptor.getReadMethod().invoke(objects.get(i)) == value;
                 i++;
             }
             if (found) {
                 return new IndexAndValue<>(i - 1, objects.get(i - 1));
-            } else throw new ResourceNotFoundException(class_.getName(), value);
+            } else throw new ResourceNotFoundException(classT.getName(), value);
         } catch (Exception e) {
             throw new ResourceNotFoundException("", value);
         }
