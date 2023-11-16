@@ -88,4 +88,8 @@ public class User {
             this.nom.equals(comparing.getNom()) &&
             this.fonction == comparing.getFonction();
     }
+    @Override
+    public int hashCode(){
+        return 0;
+    }
 }

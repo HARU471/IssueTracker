@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 public class TimestampUtils {
-    public TimestampUtils() {
+    private TimestampUtils() {
     }
 
     public static Boolean isEquals(Timestamp timestamp1, Timestamp timestamp2) {
