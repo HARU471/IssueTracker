@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ProjetLocalServiceTest {
+class ProjetLocalServiceTest {
 
     private List<Projet> projets = new ArrayList<Projet>();
 

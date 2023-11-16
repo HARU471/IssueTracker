@@ -18,9 +18,9 @@ public abstract class LocalService<T1, T2> {
 
     protected List<T1> allValues;
 
-    public LocalService() { this.allValues = new ArrayList<>(); }
+    protected LocalService() { this.allValues = new ArrayList<>(); }
 
-    public LocalService(List<T1> allValues) {
+    protected LocalService(List<T1> allValues) {
         this.allValues = allValues;
     }
 
