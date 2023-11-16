@@ -77,19 +77,16 @@ public class User {
         this.commentaireEcrits = commentaireEcrits;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(id, user.id) && Objects.equals(nom, user.nom) && fonction == user.fonction && Objects.equals(commentaireEcrits, user.commentaireEcrits);
+    }
 
     @Override
-    public boolean equals(Object obj) {
-        if (getClass() != obj.getClass()){
-            return false;
-        }
-        User comparing = (User) obj;
-        return Objects.equals(this.id, comparing.getId()) &&
-            this.nom.equals(comparing.getNom()) &&
-            this.fonction == comparing.getFonction();
-    }
-    @Override
-    public int hashCode(){
-        return 0;
+    public int hashCode() {
+        return Objects.hash(id, nom, fonction, commentaireEcrits);
     }
 }
