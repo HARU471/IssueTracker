@@ -16,9 +16,7 @@ import org.springframework.context.annotation.Bean;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @SpringBootApplication
 public class IssueTrackerStudentsApplication {
@@ -38,7 +36,7 @@ public class IssueTrackerStudentsApplication {
 
     @Bean
     public CommandLineRunner setUpBDD() {
-        return (args) -> {
+        return args -> {
 
 
             List<User> users = new ArrayList<>();
