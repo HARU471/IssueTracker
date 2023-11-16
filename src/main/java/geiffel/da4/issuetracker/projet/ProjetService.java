@@ -1,6 +1,5 @@
 package geiffel.da4.issuetracker.projet;
 
-import java.util.Collection;
 import java.util.List;
 
 public interface ProjetService {
