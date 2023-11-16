@@ -1,17 +1,12 @@
 package geiffel.da4.issuetracker.user;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerator;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import geiffel.da4.issuetracker.commentaire.Commentaire;
-import geiffel.da4.issuetracker.commentaire.CommentaireURLSerializer;
-import jakarta.annotation.Nonnull;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
 
 import java.util.ArrayList;
 import java.util.List;

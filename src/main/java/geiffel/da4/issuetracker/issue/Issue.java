@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import geiffel.da4.issuetracker.commentaire.Commentaire;
 import geiffel.da4.issuetracker.commentaire.CommentaireURLSerializer;
 import geiffel.da4.issuetracker.user.User;
-import geiffel.da4.issuetracker.user.UserURLSerializer;
 import geiffel.da4.issuetracker.utils.TimestampUtils;
 import jakarta.persistence.*;
 
