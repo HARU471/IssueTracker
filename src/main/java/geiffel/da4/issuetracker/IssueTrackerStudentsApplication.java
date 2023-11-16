@@ -21,14 +21,16 @@ import java.util.List;
 @SpringBootApplication
 public class IssueTrackerStudentsApplication {
 
-    @Autowired
     private UserRepository userRepository;
-
-    @Autowired
     private IssueRepository issueRepository;
+    private CommentaireRepository commentaireRepository;
 
     @Autowired
-    private CommentaireRepository commentaireRepository;
+    public IssueTrackerStudentsApplication(UserRepository userRepository, IssueRepository issueRepository,CommentaireRepository commentaireRepository) {
+        this.userRepository = userRepository;
+        this.issueRepository = issueRepository;
+        this.commentaireRepository = commentaireRepository;
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(IssueTrackerStudentsApplication.class, args);
