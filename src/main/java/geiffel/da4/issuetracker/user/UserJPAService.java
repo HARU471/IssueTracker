@@ -15,8 +15,11 @@ import java.util.Optional;
 @Primary
 public class UserJPAService implements UserService {
 
-    @Autowired
     private UserRepository userRepository;
+    @Autowired
+    public UserJPAService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @Override
     public List<User> getAll() {

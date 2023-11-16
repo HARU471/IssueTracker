@@ -12,8 +12,11 @@ import java.util.Optional;
 @Service
 @Primary
 public class CommentaireJPAService implements CommentaireService {
-    @Autowired
     private CommentaireRepository commentaireRepository;
+    @Autowired
+    public CommentaireJPAService(CommentaireRepository commentaireRepository) {
+        this.commentaireRepository = commentaireRepository;
+    }
 
     @Override
     public List<Commentaire> getAll() {

@@ -13,8 +13,11 @@ import java.util.Optional;
 @Primary
 public class IssueJPAService implements IssueService {
 
-    @Autowired
     private IssueRepository issueRepository;
+    @Autowired
+    public IssueJPAService(IssueRepository issueRepository) {
+        this.issueRepository = issueRepository;
+    }
 
     @Override
     public List<Issue> getAll() {
